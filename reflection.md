@@ -5,8 +5,13 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
+   When i opened up the file. It wanted me to play guessing game. So i enter my guessing number and it gave me a hint saying " go lower" and i did. I kept on going until i reach the lowest number. So thats one bug i notice because it show me the correct number and i was way off. The second thing i notice is that there are different types of level of difficulties so i played each one and i couldnt play anymore. Which is weird. And lastly i believe the most difficulty level "Hard" is not hard.  
+
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+Three bugs i noticed.
+1. The hit is giving me the wrong direction of my guessing game
+3. Couldn't start a new guessing game 
 
 **Bug Reproduction Log**
 
@@ -14,9 +19,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+|Guess of 80 | "Go Lower" hint | "Go Higher" hint | "Go Higher" hint Out of attempts! The secret was 14. Score: -5  |
+|Couldnt play any difficulty. Guess 10 | "go higher or go lower" | nothing appearing | Game over. Start a new game to try again. |
+| Switch difficulty| refresh the page| nothing is happening | Out of attempts! The secret was 8. Score: -20 |
 
 ---
 
