@@ -19,15 +19,16 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-|Guess of 80 | "Go Lower" hint | "Go Higher" hint | "Go Higher" hint Out of attempts! The secret was 14. Score: -5  |
-|Couldnt play any difficulty. Guess 10 | "go higher or go lower" | nothing appearing | Game over. Start a new game to try again. |
-| Switch difficulty| refresh the page| nothing is happening | Out of attempts! The secret was 8. Score: -20 |
+|Guess of 80 | "Go Lower" hint | "Go Higher" hint | "Go Higher" hint Out of attempts! The secret was 14. Score: -5  and i suspected location for the code is in app.py , check_guess function |
+|Couldnt play any difficulty. Guess 10 | "go higher or go lower" | nothing appearing in app.py, line 126 to line 132| Game over. Start a new game to try again. |
+| Guess -5| "Choose a number between 1 and 100"| "Go lower" | Out of attempts! The secret was 8. Score: -20 |
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+I use Claude code in my vs-code 
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion you did not accept as written (including what the AI suggested, why you rejected or changed it, and how you verified your version). It does not have to be a suggestion that was wrong: over-engineered, out of scope, harder to read, or a poor fit for this codebase all count.
 
