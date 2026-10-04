@@ -28,23 +28,17 @@ def parse_guess(raw: str):
 
     return True, value, None
 
-
+# FIXME: logic breaks here
+# There was something wrong with the logic of the game. 
+# The check_guess function was not returning the correct outcome for the guessing game.
 def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
 
-    try:
-        if guess > secret:
-            return "Too High", "📈 Go HIGHER!"
-        else:
-            return "Too Low", "📉 Go LOWER!"
-    except TypeError:
-        g = str(guess)
-        if g == secret:
-            return "Win", "🎉 Correct!"
-        if g > secret:
-            return "Too High", "📈 Go HIGHER!"
-        return "Too Low", "📉 Go LOWER!"
+    if guess > secret:
+        return "Too High", "📉 Go LOWER!"
+    return "Too Low", "📈 Go HIGHER!"
+# Claude told me to remove the try except block because it was unnecessary.
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
@@ -123,6 +117,7 @@ raw_guess = st.text_input(
     key=f"guess_input_{difficulty}"
 )
 
+
 col1, col2, col3 = st.columns(3)
 with col1:
     submit = st.button("Submit Guess 🚀")
@@ -131,10 +126,17 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
+# FIXME: The buttons are not working when resetting the game.
 if new_game:
     st.session_state.attempts = 0
-    st.session_state.secret = random.randint(1, 100)
+    # we need to change the secret number to its new difficulty range.
+    st.session_state.secret = random.randint(low, high)
     st.success("New game started.")
+    # we never reach this point because we are in the won/ lost state. Now we can reset the game
+    st.session_state.status = "playing"
+    st.session_state.history = []
+    st.session_state.score = 0
+    # This make it clear our history
     st.rerun()
 
 if st.session_state.status != "playing":
@@ -155,12 +157,7 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
-
-        outcome, message = check_guess(guess_int, secret)
+        outcome, message = check_guess(guess_int, st.session_state.secret)
 
         if show_hint:
             st.warning(message)
