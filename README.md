@@ -26,27 +26,37 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+Its a guessing game. Where you can choose the difficulties of guessing a number between 1 to whatever number it correspond to the level of difficulty. 
 - [ ] Detail which bugs you found.
+I found couple of bugs when playing with the game. One is everytime i guess the number. It gave me the wrong direction. and goes to the opposite direction. The second bugs is that its not letting play a new game everytime and my attempts are still kept. 
 - [ ] Explain what fixes you applied.
+The first fix i applied is when it comes to guessing the number and giving me the direction of going up or down. I remove the try-exempt block. The second was adding few lines of code so that it reset everytime i interact with the button "new Game" and resetting my attempts. 
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. User enter guess of 50 
+2. Game returns "Too high"
+3. User enter 25 and return a message of "Too Low"
+4. User enter 28 and return a message " Too High"
+5. User enter 26 and returns "Correct"
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
 
 ```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
+platform darwin -- Python 3.12.7, pytest-7.4.4, pluggy-1.0.0
+rootdir: /Users/voltron1217/project_codepath/Project_codepath
+configfile: pytest.ini
+plugins: anyio-4.2.0
+collected 4 items                                                              
+
+test_game_logic.py ....                                                  [100%]
+
+============================== 4 passed in 0.00s ===============================
+
 ```
 
 ## 🚀 Stretch Features

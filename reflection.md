@@ -52,7 +52,7 @@ I use Claude code in my vs-code
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
- # That everytime you interact with the website, like clicking buttons or text something inside a text box. It will restart everything and rebuilds the website again. 
+ # That everytime you interact with the website, like clicking buttons or text something inside a text box. It will restart everything and rebuilds the website again. If my friend doesnt get it then i will explain to him on a familar game he played and tell him. 
 
 
 ---
@@ -66,4 +66,7 @@ I use Claude code in my vs-code
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
 
 # One habit i want to reuse for future projects is first read the lines of code and tried to understand it and then work with AI. because you need to know what each line does. This could be both the testing havits and prompting stragety because AI doesnt know what you want it to do. and you need it to guide it in the right direction. One thing i will do differently is give it more details. This changes a lot for me when working with AI that generated code. Its kinda easy for me to ask if i am doing it right or wrong and give me a direction on where i should be writing. or replacing my code.
+
+
+
 
