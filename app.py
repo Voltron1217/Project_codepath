@@ -1,6 +1,5 @@
 import random
 import streamlit as st
-
 from logic_utils import check_guess
 
 def get_range_for_difficulty(difficulty: str):
@@ -116,6 +115,7 @@ with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
 # FIXME: The buttons are not working when resetting the game.
+# It was not resetting the amount of attempts.
 if new_game:
     st.session_state.attempts = 0
     # we need to change the secret number to its new difficulty range.
